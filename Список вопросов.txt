@@ -1,0 +1,7 @@
+1. imports redux { createStore, compose, replaceReducer ...} в доках где
+2. imports react { component ...} в доках где
+3. методы react (componentDidMount, set-get-State, ...) в доках где? Какие виды? Такие как render, это же не совсем методы, это обязательная функция, какие есть еще такие фунции или свойства?
+4. routes, какие методы где в доках они есть?
+5. redux методы к store ( subscribe, dispatch... ) где их искать и что они значат?
+
+6. Оббертка connect - получилась на App, а не Students

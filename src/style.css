@@ -1,0 +1,20 @@
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.list-content {
+  display: flex;
+}
+.nav-links li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid lightseagreen;
+  border-radius: 4px;
+  margin: 10px;
+  color: lightseagreen;
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+  background: lightseagreen;
+  color: black;
+}
