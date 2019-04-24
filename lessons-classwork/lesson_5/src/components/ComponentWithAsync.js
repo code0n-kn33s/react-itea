@@ -24,7 +24,7 @@ class SuperList extends Component{
                                 {
                                     data.map( item => {
                                         console.log('item', item);
-                                        return ( 
+                                        return (
                                             <div>
                                                 <b>{item.isActive ? 'TRUE' : 'FALSE'}</b>
                                                 <span>{item.title}</span>
@@ -57,6 +57,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         fetch('http://www.json-generator.com/api/json/get/coKLTbAkRK?indent=2')
             .then( res => res.json() )
             .then( res => {
+                console.log('res', res);
                 dispatch({
                     type: 'DATA_RES',
                     payload: res

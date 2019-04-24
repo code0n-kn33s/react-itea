@@ -1,13 +1,11 @@
-const rootReducer = () => { console.log('REDUSER IS WORK')}
-
 const initialState = {
   lesson : 5,
   course: 'React.js',
   studentsCount: 0,
 
   title: 'List Articles',
-  loadedStatus: false,
-  listArticles: []
+  loadedData: [],
+  loadedStatus: false
 };
 
 function reducer(state = initialState, action){
@@ -30,15 +28,16 @@ function reducer(state = initialState, action){
         studentsCount: --state.studentsCount
       }
 
-    case 'REQ_LIST_ARTICLES':
+    case 'REQ_DATA':
       return {
         ...state,
         loadedStatus: false
       }
-    case 'RES_LIST_ARTICLES':
+    case 'RES_DATA':
       return {
         ...state,
-        loadedStatus: true
+        loadedStatus: true,
+        loadedData: action.payload
       }
     default:
       return state;
