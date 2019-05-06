@@ -15,7 +15,7 @@ class ListArticles extends Component {
       <>
         <h2>List Articles</h2>
 
-      </>
+      </> 
     )
   }
 }

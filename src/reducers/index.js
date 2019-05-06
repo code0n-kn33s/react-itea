@@ -28,12 +28,12 @@ function reducer(state = initialState, action){
         studentsCount: --state.studentsCount
       }
 
-    case 'REQ_DATA':
+    case 'REQ_DATA': 
       return {
         ...state,
         loadedStatus: false
       }
-    case 'RES_DATA':
+    case 'RES_LIST_ARTICLES':
       return {
         ...state,
         loadedStatus: true,

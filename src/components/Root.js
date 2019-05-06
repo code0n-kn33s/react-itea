@@ -7,8 +7,10 @@ import { createStore } from 'redux'
 import rootReducer from '../reducers'
 import App from './App';
 
+import store from '../redux/store';
+
 const supportsHistory = 'pushState' in window.history;
-const store = createStore(rootReducer)
+// const store = createStore(rootReducer)
 
 class Root extends Component {
   render() {
