@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-import StudentsCount from './StudentsCount'
+import Interview from './Interview'
 
 class App extends Component {
   render() {
     return (
-      <StudentsCount />
+      <Interview />
     )
   }
 }

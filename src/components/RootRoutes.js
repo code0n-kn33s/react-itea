@@ -1,6 +1,6 @@
 import NotFound from '../lessons/lesson4/404'
 
-import Lesson1 from '../lessons/lesson1- listGuests/App'
+import Lesson1 from '../lessons/lesson1 - listGuests/App'
 import Lesson2 from '../lessons/lesson2 - toggle isShow/App'
 import Lesson3 from '../lessons/lesson3 - routes/App'
 import Lesson4 from '../lessons/lesson4/App'
