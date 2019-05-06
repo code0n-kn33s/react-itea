@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 
-import rootReducer from '../reducers'
+import store from '../redux/store'
 import App from './App';
 
 const supportsHistory = 'pushState' in window.history;
-const store = createStore(rootReducer)
 
 class Root extends Component {
   render() {

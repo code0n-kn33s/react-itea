@@ -16,8 +16,8 @@ const App = ( {add, remove, count} ) => {
 */
 
 const mapStateToProps = (state, ownProps) => ({
-  test: state,
-  count: state.studentsCount
+  test: state.studentsCount,
+  count: state.studentsCount.studentsCount
 
 })
 

@@ -1,33 +1,29 @@
 import React, { Component } from 'react'
-import './style.css'
+import { NavLink, Switch, Route } from 'react-router-dom'
+
+import ToggleDisplay from './ToggleDisplay'
+import ImagePreloader from './ImagePreloader'
 
 class App extends Component {
-  state = {
-    isShow: true
-  }
-  toggleDisplay = () => {
-    this.setState({
-      isShow: !this.state.isShow
-    })
-  }
-  render = () => (
-    <div>
-      <h3>Lesson2 works</h3>
-      <button onClick={ this.toggleDisplay }>
-        { this.state.isShow ? 'Close description' : 'Open description'}
-      </button>
-      {
-        this.state.isShow &&
-        (
-          <div>
-            Lesson2 description
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vel aspernatur dolor non veritatis molestias. Quidem distinctio necessitatibus ad neque itaque impedit. Amet placeat non fugiat consequatur quibusdam veniam quisquam?
-          </div>
-        )
-      }
-
-    </div>
-  )
+  render () {
+    return (
+    <>
+      <div className="header">
+      <h1>Lesson-4</h1>
+        <ul className="nav-links">
+          <li>
+            <NavLink to='/lesson/2'>Toggle Display</NavLink>
+          </li>
+          <li>
+            <NavLink to='/lesson/2/about'>Image Preloader</NavLink>
+          </li>
+        </ul>
+      </div>
+      <Switch>
+        <Route exact path="/lesson/2" component={ToggleDisplay}/>
+        <Route exact path="/lesson/2/about" component={ImagePreloader}/>
+      </Switch>
+    </>
+) }
 }
-
 export default App

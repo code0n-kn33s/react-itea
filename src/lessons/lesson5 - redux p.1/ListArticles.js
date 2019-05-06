@@ -10,6 +10,7 @@ class ListArticles extends Component {
   render() {
     let { data, count, loaded } = this.props
     let arr = data.slice(0, count)
+    console.log('PROPS', this.props);
     return (
       <>
         <h2>List Articles</h2>
@@ -36,9 +37,9 @@ class ListArticles extends Component {
   REDUX
 */
 const MapStateToProps = (state, props) => ({
-  data: state.loadedData,
-  loaded: state.loadedStatus,
-  count: state.studentsCount
+  data: state.studentsCount.loadedData,
+  loaded: state.studentsCount.loadedStatus,
+  count: state.studentsCount.studentsCount
 })
 
 const MapDispatchToProps = (dispatch, props) => ({
@@ -48,6 +49,7 @@ const MapDispatchToProps = (dispatch, props) => ({
     fetch('http://www.json-generator.com/api/json/get/ceNdVvyTCa?indent=2')
       .then( res => res.json() )
       .then( res => {
+        console.log("RES listArt", res)
         dispatch({
           type: 'RES_LIST_ARTICLES',
           payload: res

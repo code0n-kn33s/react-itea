@@ -12,12 +12,14 @@ const Button = ({action, style, textValue, children}) => (
 
 Button.defaultProps = {
   style: {
-    padding: '5px 20px'
+    margin: '15px 10px',
+    padding: '5px 20px',
+    borderColor: 'yellow'
   },
-  action: () => {
-    console.log('Default action on Button');
+  action: (e) => {
+    console.log('action on Button e', e  );
   },
-  textValue: "Just a button"
+  textValue: "Old text button"
 }
 
-export default Buttonr;
+export default Button;
