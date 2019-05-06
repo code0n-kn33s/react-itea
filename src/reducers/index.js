@@ -1,7 +1,7 @@
 const initialState = {
   lesson : 5,
   course: 'React.js',
-  studentsCount: 0,
+  studentsCount: 1,
 
   title: 'List Articles',
   loadedData: [],
@@ -28,7 +28,7 @@ function reducer(state = initialState, action){
         studentsCount: --state.studentsCount
       }
 
-    case 'REQ_DATA': 
+    case 'REQ_LIST_ARTICLES':
       return {
         ...state,
         loadedStatus: false

@@ -5,17 +5,29 @@ class ListArticles extends Component {
 
   componentDidMount() {
     this.props.fetchListArticles()
-    console.log('this.props', this.props);
   }
 
   render() {
-    let { data } = this.props
-    console.log(data);
+    let { data, count, loaded } = this.props
+    let arr = data.slice(0, count)
     return (
       <>
         <h2>List Articles</h2>
-
-      </> 
+        {
+          loaded === false ?
+            <div> LOADING... </div> :
+          arr !== null && arr.map( item => {
+            return (
+              <div key={item.index} style={{ width: '22%', padding: '5px', margin: '5px', border: '1px solid grey', display: 'inline-block', verticalAlign: 'top'}}>
+                <h4>{item.name}</h4>
+                <div>{item.address}</div>
+                <div>{item.email}</div>
+                <h5>{item.balance}</h5>
+              </div>
+              )
+          } )
+        }
+      </>
     )
   }
 }
@@ -25,7 +37,8 @@ class ListArticles extends Component {
 */
 const MapStateToProps = (state, props) => ({
   data: state.loadedData,
-  loaded: state.loadedStatus
+  loaded: state.loadedStatus,
+  count: state.studentsCount
 })
 
 const MapDispatchToProps = (dispatch, props) => ({
