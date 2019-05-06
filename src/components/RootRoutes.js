@@ -15,7 +15,6 @@ const Routes = [
   },
   {
     path: '/lesson/2',
-    exact: true,
     component: Lesson2
   },
   {

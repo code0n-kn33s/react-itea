@@ -11,7 +11,7 @@ const App = () => (
       <h1>Lesson-4</h1>
         <ul className="nav-links">
           <li>
-            <NavLink to='/lesson/4/list'>List</NavLink>
+            <NavLink to='/lesson/4'>List</NavLink>
           </li>
           <li>
             <NavLink to='/lesson/4/about'>About</NavLink>
@@ -22,7 +22,7 @@ const App = () => (
         </ul>
       </div>
       <Switch>
-        <Route exact path="/lesson/4/list" component={List}/>
+        <Route exact path="/lesson/4" component={List}/>
         <Route exact path="/lesson/4/about" component={About}/>
         <Route exact path="/lesson/4/contacts" component={Contacts}/>
       </Switch>

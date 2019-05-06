@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 
+
+
+
+
+
+
+
+
 class UserItem extends Component {
 
   state = {
@@ -17,6 +25,7 @@ class UserItem extends Component {
     const { arrived } = this.state;
     const { guest } = this.props;
     const { checkUser } = this;
+
     return(
       <div
         className={ arrived ? 'user_item arrived' : 'user_item'}

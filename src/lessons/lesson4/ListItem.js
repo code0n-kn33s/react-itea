@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 
 class ListItem extends Component {
   render() {
-    const { id, body, title, userId} = this.props.data;
+    const { id, title, userId} = this.props.data;
     return (
-      <>
-        <div>ListItem - {id}</div>
-        <div>ListItem - {body}</div>
+      <div style={{ display: 'inline-block', padding: '5px', border: '1px solid', margin: '5px'}}>
+        <div>id - {id}</div>
         <div>ListItem - {title}</div>
         <div>ListItem - {userId}</div>
-      </>
+      </div>
     )
   }
 }

@@ -11,7 +11,7 @@ class List extends Component {
     list: null
   }
 
-  componentDidMount() { 
+  componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then( res => res.json() )
       .then( res => this.setState({ list: res }) );
@@ -21,15 +21,14 @@ class List extends Component {
     const { list } = this.state;
     return (
       <>
-        {
-          // list !== null &&
-          //   list.map( item => {
-          //     return(
-          //       <ListItem key={item.id} data={item}/>
-          //     )
-          //   })
+          {
+            list === null ? ( <div> LOADING... </div> ) :
+            list.map( item => {
+              return(
+                <ListItem key={item.id} data={item}/>
+              )
+            })
         }
-
       </>
     )
   }

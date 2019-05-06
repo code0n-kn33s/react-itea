@@ -1,47 +1,7 @@
-const initialState = {
-  lesson : 5,
-  course: 'React.js',
-  studentsCount: 1,
+import { combineReducers } from 'redux'
 
-  title: 'List Articles',
-  loadedData: [],
-  loadedStatus: false
-};
+import studentsCount from './lesson4_CountStudents'
 
-function reducer(state = initialState, action){
-  switch( action.type ){
-    case 'CHANGE_COURSE':
-      return {
-        ...state,
-        course: action.course
-      }
-
-    case 'ADD_STUDENT':
-      return {
-        ...state,
-        studentsCount: ++state.studentsCount
-      }
-
-    case 'REMOVE_STUDENT':
-      return {
-        ...state,
-        studentsCount: --state.studentsCount
-      }
-
-    case 'REQ_LIST_ARTICLES':
-      return {
-        ...state,
-        loadedStatus: false
-      }
-    case 'RES_LIST_ARTICLES':
-      return {
-        ...state,
-        loadedStatus: true,
-        loadedData: action.payload
-      }
-    default:
-      return state;
-  }
-}
+const reducer = combineReducers({ studentsCount })
 
 export default reducer
