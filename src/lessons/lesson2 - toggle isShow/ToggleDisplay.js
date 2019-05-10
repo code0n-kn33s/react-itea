@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 
 import Button from './Button'
+import { Toggler, TogglerItem } from './Toggler'
+
 
 class ToggleDisplay extends Component {
   state = {
+    // display
+    isShow: true,
+    // button component
     activeState: true,
     bdColor: ' cyan ',
     someText: ' New text button ',
     bodyText: ' Old text to body ',
-    isShow: true
+    // toggler
+    activeToggler: "left"
   }
 
   buttonAction = (e) => {
@@ -17,23 +23,33 @@ class ToggleDisplay extends Component {
     if (this.state.activeState) {
       e.target.innerHTML = this.state.someText
       this.setState({ bodyText: " New text to body " })
-      e.target.style.borderColor = this.state.bdColor
+      e.target.style.background = this.state.bdColor
     } else {
       e.target.innerHTML = Button.defaultProps.textValue
       this.setState({ bodyText: " Old text to body " })
-      e.target.style.borderColor = Button.defaultProps.style.borderColor
+      e.target.style.background = Button.defaultProps.style.background
     }
   }
 
   toggleDisplay = () => {
     this.setState({ isShow: !this.state.isShow })
   }
+
+  changeStatus = (event) => {
+    let TogglerValue = event.target.dataset.value;
+    this.setState({
+        activeToggler: TogglerValue
+      });
+  }
+
   render = () => (
     <>
+      {/* show and hide text block */}
       <h3>ToggleDisplay</h3>
       <button onClick={ this.toggleDisplay }>
         { this.state.isShow ? 'Close description' : 'Open description'}
-      </button><br/>
+      </button>
+      <hr/>
       {
         this.state.isShow &&
         (
@@ -44,9 +60,20 @@ class ToggleDisplay extends Component {
         )
       }
       <hr/>
+      {/* Button with default styles and action */}
       <h3>ToggleButton with default properties</h3>
-      <Button action={ this.buttonAction } style={{borderColor: 'cyan'}} />
+      <Button action={ this.buttonAction }  />
       <div className="body-text"> { this.bodyText } </div>
+      <hr/>
+      {/* Toggler - tabs */}
+      <Toggler
+        name="Choose layout"
+        activeToggler={this.state.activeToggler}
+        changeStatus={this.changeStatus}>
+        <TogglerItem name="left"/>
+        <TogglerItem name="center"/>
+        <TogglerItem name="right"/>
+      </Toggler>
     </>
   )
 }

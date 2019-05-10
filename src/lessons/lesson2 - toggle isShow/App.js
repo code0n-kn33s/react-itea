@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, Switch, Route } from 'react-router-dom'
 
 import ToggleDisplay from './ToggleDisplay'
-import ImagePreloader from './ImagePreloader'
+import TableComp from './TableComp'
 
 class App extends Component {
   render () {
@@ -15,13 +15,13 @@ class App extends Component {
             <NavLink to='/lesson/2'>Toggle Display</NavLink>
           </li>
           <li>
-            <NavLink to='/lesson/2/about'>Image Preloader</NavLink>
+            <NavLink to='/lesson/2/about'>Create Table</NavLink>
           </li>
         </ul>
       </div>
       <Switch>
         <Route exact path="/lesson/2" component={ToggleDisplay}/>
-        <Route exact path="/lesson/2/about" component={ImagePreloader}/>
+        <Route exact path="/lesson/2/about" component={TableComp}/>
       </Switch>
     </>
 ) }

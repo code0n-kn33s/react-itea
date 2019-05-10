@@ -14,7 +14,7 @@ Button.defaultProps = {
   style: {
     margin: '15px 10px',
     padding: '5px 20px',
-    borderColor: 'yellow'
+    background: 'yellow'
   },
   action: (e) => {
     console.log('action on Button e', e  );
