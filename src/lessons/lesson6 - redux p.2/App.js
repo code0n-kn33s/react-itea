@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import Interview from './Interview'
+import Interview from '../lesson2 - toggle isShow/Interview'
 
 class App extends Component {
   render() {
