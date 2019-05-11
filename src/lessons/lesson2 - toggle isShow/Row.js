@@ -1,23 +1,52 @@
 import React from 'react';
+import Button from './../../components/elems/Button'
+import { FaRegHandScissors } from 'react-icons/fa'
+import styled from 'styled-components'
 
-export const Row = ({action, style, textValue, children}) => (
-  <div style={style} onClick={action}>
-    {
-      children === undefined ?
-        textValue :
-        children
-    }
-  </div>
-);
+const pink = 'palevioletred'
+
+const FaRegHandScissorsStyled = styled(FaRegHandScissors)`
+  font-size: 20px;
+`
+const StyledButton = styled(Button)`
+  border-radius: 50px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: ${ props => props.head ? 'hidden' : 'block'};
+  background-color: lightskyblue;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+`
+
+const RowStyled = styled.div`
+  display: flex;
+  border-bottom: 1px solid ${pink};
+  :last-child {
+    border-bottom: none;
+  };
+  font-weight: ${props => props.head ? '700' : '400' };
+  text-transform: ${props => props.head ? 'uppercase' : '' };
+`
+
+export const Row = ({ head, children }) => {
+  const headProp = head
+  return (
+    <RowStyled head={ headProp }>
+      {
+        children === undefined ? '' : children
+      }
+      <StyledButton head={headProp} className="diff-button">
+        <FaRegHandScissorsStyled />
+      </StyledButton>
+      <StyledButton head={ headProp } className="diff-button" text='add' />
+    </RowStyled>
+  )
+}
 
 Row.defaultProps = {
-  style: {
-    padding: '5px 20px'
-  },
-  action: () => {
-    console.log('Default action on Row');
-  },
-  textValue: "Just a Row"
+  head: false
 }
 
 export default Row;

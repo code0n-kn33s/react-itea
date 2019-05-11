@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const ListSubject = ({data}) => {
-  console.log(data);
+
   return (
     <div
       className="list-item"

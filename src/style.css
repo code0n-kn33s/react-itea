@@ -1,3 +1,6 @@
+.table-rows:first-child {
+  border-top: 1px solid palevioletred;
+}
 .nav-links {
   display: flex;
   list-style: none;

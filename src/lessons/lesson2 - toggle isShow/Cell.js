@@ -1,30 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-/*
-  В JSX у компонента может быть открывающий и закрывающий теги.
-  Все что попадет между ними, будет переданно во внутрь как props
-*/
+import styled, { css } from 'styled-components'
 
-const Cell = ({ children }) => (
-  <div className="myChildrenComponent">
-    Lets render here some stuff!
-    <div>
-    {
-      /*
-        Во внутрь child мы можем передать:
-        - Текст
-        - HTML <img src="https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/>
-        - Component Один или несколько компонентов
-        - Expression - JS выражение
+const StyledCell = styled.div`
+  padding: 5px;
+  background: ${ props => props.bgColor || 'white' };
+  flex-grow: 1;
+  text-align: center;
+  align-self: center;
+  border-right: 1px solid palevioletred;
+  :last-child {
+    border: none;
+  }
+  ${props => props.primary && css`
+    background: palevioletred;
+    color: white;
+  `}
+`
 
-        Booleans, null и undefined - Валидные дочерние елементы,
-        просто они не будут отрисованы.
+export const Cell = ({
+  text,
+  cells,
+  fontColor,
+  bgColor,
+  type }) => {
+  return (
+    <StyledCell>{ text }</StyledCell>
+) }
 
-      */
-    }
-      one cell
-    </div>
-  </div>
-);
-
-export default Cell;
+Cell.defaultProps = {
+  cells: 1,
+  fontColor: 'grey',
+  bcgColor: 'lightblue',
+  type: 'TEXT',
+  text: ''
+}

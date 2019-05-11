@@ -10,7 +10,7 @@ import React, { Component } from 'react'
 
 export class Toggler extends Component {
   render(){
-    let { name, children, activeToggler, changeStatus } = this.props;
+    let { children, activeToggler, changeStatus } = this.props;
 
     return(
       <div>

@@ -1,7 +1,10 @@
-1. imports redux { createStore, compose, replaceReducer ...} в доках где
-2. imports react { component ...} в доках где
-3. методы react (componentDidMount, set-get-State, ...) в доках где? Какие виды? Такие как render, это же не совсем методы, это обязательная функция, какие есть еще такие фунции или свойства?
-4. routes, какие методы где в доках они есть?
-5. redux методы к store ( subscribe, dispatch... ) где их искать и что они значат?
+1. imports redux { createStore, compose, replaceReducer ...} где в доках
+2. imports react { component ...} где в доках
+3. методы react (componentDidMount, set-get-State, ...) где в доках? Какие есть виды? Такие как render, это же не совсем методы, это обязательная функция, какие есть еще такие фунции или свойства?
+4. redux методы к store ( subscribe, dispatch... ) где их искать и что они значат?
 
-6. Оббертка connect - получилась на App, а не Students
+5. Что означает этот worning?
+  ./src/lessons/lesson2 - toggle isShow/Cell.js
+  Line 23:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+6. 
