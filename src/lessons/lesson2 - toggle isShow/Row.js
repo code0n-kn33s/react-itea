@@ -10,18 +10,26 @@ const FaRegHandScissorsStyled = styled(FaRegHandScissors)`
 `
 const StyledButton = styled(Button)`
   border-radius: 50px;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  display: ${ props => props.head ? 'hidden' : 'block'};
-  background-color: lightskyblue;
+  width: 20px;
+  padding: 0;
+  font-size: 20px;
+  height: 20px;
+  visibility: ${ props => props.head ? 'hidden' : 'visible'};
+  background-color: transparent;
   font-weight: bold;
+  border: none;
   color: white;
   text-align: center;
+  :hover {
+    cursor: pointer;
+    transition: .3s ease;
+    padding: 1px;
+  }
 `
 
 const RowStyled = styled.div`
   display: flex;
+  align-items: center;
   border-bottom: 1px solid ${pink};
   :last-child {
     border-bottom: none;
@@ -30,17 +38,20 @@ const RowStyled = styled.div`
   text-transform: ${props => props.head ? 'uppercase' : '' };
 `
 
-export const Row = ({ head, children }) => {
-  const headProp = head
+export const Row = ({ head, del, children }) => {
   return (
-    <RowStyled head={ headProp }>
+    <RowStyled head={ head }>
       {
         children === undefined ? '' : children
       }
-      <StyledButton head={headProp} className="diff-button">
+      <StyledButton
+        className="diff-button"
+        head={ head }
+        onClick={ del }
+      >
         <FaRegHandScissorsStyled />
       </StyledButton>
-      <StyledButton head={ headProp } className="diff-button" text='add' />
+      <StyledButton head={ head } className="diff-button" text='add' />
     </RowStyled>
   )
 }

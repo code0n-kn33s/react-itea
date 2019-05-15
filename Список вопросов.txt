@@ -1,10 +1,22 @@
-1. imports redux { createStore, compose, replaceReducer ...} где в доках
-2. imports react { component ...} где в доках
-3. методы react (componentDidMount, set-get-State, ...) где в доках? Какие есть виды? Такие как render, это же не совсем методы, это обязательная функция, какие есть еще такие фунции или свойства?
-4. redux методы к store ( subscribe, dispatch... ) где их искать и что они значат?
 
-5. Что означает этот worning?
+1. Что означает этот worning?
   ./src/lessons/lesson2 - toggle isShow/Cell.js
   Line 23:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
-
-6. 
+2. Styled Component как выносить классы.
+    Использовать переменные. Использовать mixins
+3. Функции хуки - в более больших проэктах
+4. Как написать что-нибудь наподобие ... в styled components
+  /* font-style: ${ props => {
+      switch(props.type) {
+        case 'DATE':
+          'italic'
+          break
+        case 'INFO':
+          'oblique'
+          break
+        default:
+          'normal'
+          break
+      }
+    }
+  } */

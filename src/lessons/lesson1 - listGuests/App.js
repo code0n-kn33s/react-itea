@@ -37,7 +37,6 @@ class App extends Component {
     data: ApiGuests,
     viewGuest: ApiGuests[0]
   }
-
   filterGuests = (e) => {
     const val = e.target.value.toLowerCase();
 
@@ -49,33 +48,26 @@ class App extends Component {
           isFind = true;
         }
       }
-
       return isFind;
     });
-
     this.setState({
       data: result
     })
-
   }
   loadGuests = (guests) => {
     this.setState({ data: guests })
   }
-
   updateData = (config) => {
     this.setState(config)
   }
-
   selectUser = ( guest ) => (e) => {
     this.setState({
       viewGuest: guest
     });
   }
-
   clearGuests = () => {
     this.setState({ data: [] })
   }
-
   isArrived = ( guest ) => (e) => {
     e.stopPropagation();
     let newArray = this.state.data.map( item =>{

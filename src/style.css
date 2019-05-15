@@ -73,3 +73,11 @@
 .togglerItem.active{
   background: #ffcc00;
 }
+
+.wrap-fetch {
+  position: absolute;
+  right: 50px;
+  top: 70px;
+  height: 200px;
+  overflow: hidden;
+}

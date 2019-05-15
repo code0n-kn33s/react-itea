@@ -7,6 +7,9 @@ import Lesson4 from '../lessons/lesson4/App'
 import Lesson5 from '../lessons/lesson5 - redux p.1/App'
 import Lesson6 from '../lessons/lesson6 - redux p.2/App'
 
+import TheoryReact from '../theory/TheoryReact'
+import TheoryRedux from '../theory/TheoryRedux'
+
 const Routes = [
   {
     path: '/',
@@ -32,6 +35,14 @@ const Routes = [
   {
     path: '/lesson/6',
     component: Lesson6
+  },
+  {
+    path: '/Theory/React',
+    component: TheoryReact
+  },
+  {
+    path: '/Theory/Redux',
+    component: TheoryRedux
   },
   {
     conponent: NotFound

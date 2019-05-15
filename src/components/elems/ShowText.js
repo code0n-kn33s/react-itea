@@ -33,15 +33,14 @@ export default class ShowDisplay extends React.Component {
       <StyledComp>
         <button onClick={this.showAndHide}>
           { this.state.isActive ?
-            'hide task' :
-            'show task'}
-        </button>
-          { this.state.isActive ?
-            <div className="styled-paragraph">
-            { this.props.text } </div> :
-            ''
+            'hide task' : 'show task'
           }
+        </button>
 
+        { this.state.isActive ?
+          <div className="styled-paragraph">
+          { this.props.children } </div> : ''
+        }
       </StyledComp>
   )
 }
